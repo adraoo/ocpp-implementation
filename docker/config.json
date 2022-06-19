@@ -14,7 +14,7 @@
       "protocol": "http",
       "host": "server",
       "port": 8000,
-      "debug": false
+      "debug": true
     },
     {
       "type": "ocpp",
@@ -22,7 +22,7 @@
       "protocol": "ws",
       "host": "server",
       "port": 8010,
-      "debug": false
+      "debug": true
     }
   ],
   "CentralSystemRestService": {
@@ -37,7 +37,7 @@
     "passwordBlockedWaitTimeMin": 5,
     "captchaSecretKey": "6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe",
     "captchaScore": 0.25,
-    "debug": false
+    "debug": true
   },
   "CentralSystemFrontEnd": {
     "protocol": "http",
@@ -62,13 +62,17 @@
     "debug": false
   },
   "WSDLEndpoint": {
-    "baseUrl": "http://server:8000"
+    "baseUrl": "http://server:8000",
+    "baseSecureUrl": "http://server:8000"
   },
   "JsonEndpoint": {
-    "baseUrl": "ws://server:8010"
+    "baseUrl": "ws://server:8010",
+    "baseSecureUrl": "ws://server:8010",
+    "targetPort" : 8010
   },
   "OCPIEndpoint": {
-    "baseUrl": "http://server:9090"
+    "baseUrl": "http://server:9090",
+    "baseSecureUrl": "http://server:9090"
   },
   "AsyncTask": {
     "active": true,
@@ -76,7 +80,7 @@
   },
   "Storage": {
     "implementation": "mongodb",
-    "uri": null,
+    "uri": "mongodb://evse-user:evse-user-pwd@mongodb:27017/evse?readPreference=secondaryPreferred",
     "host": "mongodb",
     "port": 27017,
     "user": "evse-user",

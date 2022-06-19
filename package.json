@@ -45,6 +45,7 @@
     "start:emailBackup": "maildev --web 2080 --web-ip 127.0.0.1 --smtp 2025 --verbose --incoming-user evse-mail-user --incoming-pass evse-mail-pwd",
     "build": "npm version && npm run build:prod",
     "build:dev": "npm version && webpack --env dev",
+    "build:dev:docker": "npm version && webpack --env dev && docker cp dist\\ evse_server_1:\\usr\\app\\",
     "build:prod": "npm version && webpack --env prod",
     "clean-install": "npm version && rimraf package-lock.json && rimraf node_modules && npm cache clear --force && npm install",
     "eslint": "cross-env TIMING=1 eslint --ext .js,.ts types src test",

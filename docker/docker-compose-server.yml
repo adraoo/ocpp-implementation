@@ -8,7 +8,7 @@ services:
       context: ..
       dockerfile: docker/ev_server.Dockerfile
       args:
-        build: prod
+        build: dev
     ports:
     - 81:81
     - 8000:8000
